@@ -1,0 +1,53 @@
+<div class="row mt-5">
+    <div class="col-md-4 mb-3" *ngFor="let event of specialEvents">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{event.name}}</h5>
+          <p class="card-text">{{event.description}}</p>
+          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success" (click) = "onClickAdmission(event.name)">Take Admission</a>
+        </div>
+        <div class="card-footer text-muted">
+          {{event.Teacher}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Records</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control" formControlName="name" placeholder="Attendee Name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label  class="form-label">Email</label>
+                  <input type="email" class="form-control" formControlName="email"  placeholder="abcd@gmail.com" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Mobile</label>
+                    <input type="number" class="form-control" formControlName="mobile"  placeholder="+91-1234567890" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label  class="form-label">Last Attended Batch</label>
+                  <input type="text" class="form-control" formControlName="prevBatch"  placeholder="Angular" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3">
+                <label  class="form-label">RID</label>
+                <input type="text" class="form-control" formControlName="RID"  placeholder="AM-109" id="exampleInputPassword1">
+            </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="clear">Close</button>
+          <button type="button" class="btn btn-primary" (click)="takeAdmission()">submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
