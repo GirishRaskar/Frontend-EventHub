@@ -13,7 +13,7 @@ export class EventsComponent implements OnInit
 
   formValue! : FormGroup
   events : any[] = []
-  counter : number;
+  counter : number = 0; //*
   allStudentData : any;
   modelobj : model = new model;
   isAdmissionFull : boolean = false;
@@ -74,7 +74,7 @@ export class EventsComponent implements OnInit
 
     }, err=>{
       console.log(err);
-      alert("Restaurent Added Failed!");
+      alert("Admission Failed!");
     })
   }
 
