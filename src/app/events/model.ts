@@ -1,8 +1,7 @@
-export class model
-{
-	_id : number = 0;
-	name : string = '';
-    email : string = '';
-    mobile : string = '';
-	batch : string = '';
-}
+export class model {
+	name: string = '';
+	email: string = '';
+	mobile: string = '';
+	batch: string = '';
+  }
+  
